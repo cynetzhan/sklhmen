@@ -775,7 +775,7 @@ class CrudClass {
 		}
 		$values = "('".implode("', '", array_values($data))."')";
 		$query = "INSERT INTO $this->table $keys VALUES $values";
-		echo $query;
+		// echo $query;
 		return $this->execute($query);
 	}
 
@@ -783,7 +783,7 @@ class CrudClass {
 		$this->query = "UPDATE $this->table ".(($this->set != "")?"SET $this->set ":"").(($this->criteria != "")?"WHERE $this->criteria ":"");
 		$this->last_query = $this->query;
 		$stat = $this->execute($this->query);
-		echo $this->query;
+		// echo $this->query;
 		$this->reset();
 		return $stat;
 	}
