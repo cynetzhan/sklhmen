@@ -73,9 +73,9 @@ $d = $crud->ReadAllClausa($table, 'id_kelas', $id_kelas);
 					$table2 = "siswa";
 					$q5 = $crud->ReadAllClausaOrder($table2, 'id_kelas', $id_kelas, 'nama');
 					$no = 0;
-					$check = mysql_num_rows($q5);
+					$check_siswa = mysql_num_rows($q5);
 
-					if ($check == 0) {
+					if ($check_siswa == 0) {
 						echo "Data Siswa Kelas Ini Belum Ada";
 					} else {
 
@@ -150,9 +150,11 @@ $d = $crud->ReadAllClausa($table, 'id_kelas', $id_kelas);
 				<?php } ?>
 			</tbody>
 		</table>
+		<?php if($check_siswa > 0){ ?>
 		<form action="print.php" method="POST" class="pull-left">
 			<input type="hidden" name="id_kelas" value="<?= $id_kelas ?>">
     	<button class="form-control btn-sm btn">Cetak Rapor</button>
 		</form>
+		<?php } ?>
 	</div>
 </div>
