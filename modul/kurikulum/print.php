@@ -187,10 +187,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
             <td><?= $nilai['n_pt'] ?></td>
             <td><?= predikat($nilai['n_pt']) ?></td>
             <td><?= $nilai['nilai_pengetahuan'] ?></td>
-            <td><?= $nilai['kkm'] ?></td>
-            <td><?= $nilai['n_kt'] ?></td>
-            <td><?= predikat($nilai['n_kt']) ?></td>
-            <td><?= $nilai['nilai_keterampilan'] ?></td>
+            <td><?= ($nilai['n_kt']) ? $nilai['kkm'] : "-" ?></td>
+            <td><?= ($nilai['n_kt']) ? $nilai['n_kt'] : "-" ?></td>
+            <td><?= ($nilai['n_kt']) ? predikat($nilai['n_kt']) : "-" ?></td>
+            <td><?= ($nilai['n_kt']) ? $nilai['nilai_keterampilan'] : "-" ?></td>
           </tr>
           <?php } ?>
         </tbody>
